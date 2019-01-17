@@ -24,6 +24,7 @@
 #include <Fraction.hpp>
 #include <gst/gst.h>
 #include <MediaSet.hpp>
+#include <iostream>
 
 using namespace kurento;
 
@@ -32,7 +33,7 @@ struct GF {
   ~GF();
 };
 
-BOOST_GLOBAL_FIXTURE (GF)
+BOOST_GLOBAL_FIXTURE (GF);
 
 GF::GF() = default;
 
@@ -48,7 +49,7 @@ BOOST_AUTO_TEST_CASE (complex_type)
   std::shared_ptr<kurento::Factory> mediaPipelineFactory;
   std::shared_ptr<kurento::MediaObject> mediaPipeline;
 
-  gst_init(nullptr, nullptr);
+  gst_init (nullptr, nullptr);
 
   std::string moduleName = "../../src/server/libkmscoremodule.so";
 
@@ -70,8 +71,8 @@ BOOST_AUTO_TEST_CASE (complex_type)
     complexType.Serialize (writer);
 
     reader.JsonValue = writer.JsonValue;
-    Serialize (complexTypeReturned , reader);
-    Serialize (complexTypeReturned , writer2);
+    Serialize (complexTypeReturned, reader);
+    Serialize (complexTypeReturned, writer2);
 
     if (writer.JsonValue.toStyledString() != writer2.JsonValue.toStyledString() ) {
       BOOST_ERROR ("Serialization does not match");

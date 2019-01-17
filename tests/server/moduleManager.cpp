@@ -24,6 +24,7 @@
 #include <Error.hpp>
 #include <gst/gst.h>
 #include <MediaSet.hpp>
+#include <iostream>
 
 #include <config.h>
 
@@ -34,7 +35,7 @@ struct GF {
   ~GF();
 };
 
-BOOST_GLOBAL_FIXTURE (GF)
+BOOST_GLOBAL_FIXTURE (GF);
 
 GF::GF() = default;
 
@@ -49,7 +50,7 @@ BOOST_AUTO_TEST_CASE (load_modules)
   std::shared_ptr<kurento::Factory> mediaPipelineFactory;
   std::shared_ptr<kurento::MediaObject> mediaPipeline;
 
-  gst_init(nullptr, nullptr);
+  gst_init (nullptr, nullptr);
 
   std::string moduleName = "../../src/server/libkmscoremodule.so";
 

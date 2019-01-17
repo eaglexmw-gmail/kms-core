@@ -81,13 +81,13 @@ else()
   generic_find(LIBNAME Boost REQUIRED COMPONENTS filesystem system regex unit_test_framework)
 endif()
 
-generic_find(LIBNAME gstreamer-1.5 VERSION ${GST_REQUIRED} REQUIRED)
-generic_find(LIBNAME gstreamer-base-1.5 VERSION ${GST_REQUIRED} REQUIRED)
-generic_find(LIBNAME gstreamer-video-1.5 VERSION ${GST_REQUIRED} REQUIRED)
-generic_find(LIBNAME gstreamer-check-1.5 VERSION ${GST_REQUIRED})
-generic_find(LIBNAME gstreamer-sdp-1.5 VERSION ${GST_REQUIRED} REQUIRED)
-generic_find(LIBNAME gstreamer-pbutils-1.5 VERSION ${GST_REQUIRED} REQUIRED)
-generic_find(LIBNAME gstreamer-rtp-1.5 VERSION ${GST_REQUIRED} REQUIRED)
+generic_find(LIBNAME gstreamer-1.0 VERSION ${GST_REQUIRED} REQUIRED)
+generic_find(LIBNAME gstreamer-base-1.0 VERSION ${GST_REQUIRED} REQUIRED)
+generic_find(LIBNAME gstreamer-video-1.0 VERSION ${GST_REQUIRED} REQUIRED)
+generic_find(LIBNAME gstreamer-check-1.0 VERSION ${GST_REQUIRED})
+generic_find(LIBNAME gstreamer-sdp-1.0 VERSION ${GST_REQUIRED} REQUIRED)
+generic_find(LIBNAME gstreamer-pbutils-1.0 VERSION ${GST_REQUIRED} REQUIRED)
+generic_find(LIBNAME gstreamer-rtp-1.0 VERSION ${GST_REQUIRED} REQUIRED)
 
 generic_find(LIBNAME KmsJsonRpc VERSION ${JSON_RPC_REQUIRED} REQUIRED)
 generic_find(LIBNAME sigc++-2.0 VERSION ${SIGCPP_REQUIRED} REQUIRED)
@@ -96,12 +96,12 @@ generic_find(LIBNAME uuid REQUIRED)
 
 find_package(LibVpx REQUIRED)
 
-set(CMAKE_INSTALL_GST_PLUGINS_DIR ${CMAKE_INSTALL_LIBDIR}/gstreamer-1.5)
+set(CMAKE_INSTALL_GST_PLUGINS_DIR ${CMAKE_INSTALL_LIBDIR}/gstreamer-1.0)
 
 enable_testing()
 
 add_subdirectory(src)
-add_subdirectory(tests)
+# add_subdirectory(tests)
 
 install(
   FILES "${CMAKE_CURRENT_SOURCE_DIR}/CMake/CodeGenerator.cmake"
