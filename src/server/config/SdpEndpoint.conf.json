@@ -3,7 +3,7 @@
   "numVideoMedias" : 1,
   "audioCodecs" : [
     {
-      "name" : "opus/48000/2"
+      "name" : "opus/48000/2",
 "_comment01": "// Next is an example about how a codec can be configured.",
 "_comment02": "// WARNING: Usage of properties is not yet supported",
 "_comment03": "//      \"properties\" : {",
